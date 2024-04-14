@@ -20,7 +20,6 @@ class FlightEventTime(models.Model):
     All events times are in UTC
     """
     _name = 'flight.event.time'
-    _inherit = 'flight.base'
     _description = 'Flight Event Time'
 
     flight_id = fields.Many2one('flight.flight')
@@ -58,7 +57,6 @@ class FlightEventTime(models.Model):
 
 class FlightEventDuration(models.Model):
     _name = 'flight.event.duration'
-    _inherit = 'flight.base'
     _description = 'Flight Event Pairs'
 
     duration_kind_id = fields.Many2one('flight.event.duration.kind')
@@ -79,7 +77,6 @@ class FlightEventDuration(models.Model):
 class FlightEventKind(models.Model):
     _name = 'flight.event.kind'
     _description = 'Flight Event Kind'
-    _inherit = 'flight.base'
     _rec_name = 'code'
 
     code = fields.Char()

@@ -40,15 +40,6 @@
         </field>
     </record>
 
-
-    <!-- Define action for flight.flight -->
-    <record id="action_flight_flight" model="ir.actions.act_window">
-        <field name="name">Flights</field>
-        <field name="res_model">flight.flight</field>
-        <field name="view_mode">tree,form</field>
-        <field name="view_id" ref="view_flight_flight_tree" />
-    </record>
-
     <!-- Define tree view for flight.flight -->
     <record id="view_flight_flight_tree" model="ir.ui.view">
         <field name="name">flight.flight.tree</field>
@@ -70,6 +61,14 @@
                 <field name="has_errors"/>
             </tree>
         </field>
+    </record>
+
+    <!-- Define action for flight.flight -->
+    <record id="action_flight_flight" model="ir.actions.act_window">
+        <field name="name">Flights</field>
+        <field name="res_model">flight.flight</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_flight_flight_tree" />
     </record>
 
     <menuitem id="menu_flight_flight" name="My Flights" parent="flights.menu_flights" action="action_flight_flight" sequence="2"/>

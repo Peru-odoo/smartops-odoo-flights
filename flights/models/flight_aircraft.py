@@ -85,19 +85,17 @@ class FlightAircraftModel(models.Model):
 
     #  if   "Kg5700": is true - record 142000 lbs by defaukt as mtow (medium), otherwise record 12000 lbs by default (light)
 
-    mtow = fields.Integer("Maximum take-off weight in pounds")
 
-    def get_weight_category(self):
-        if self.mtow >= 299200:
-            return "H"
-        elif self.mtow >= 12500:
-            return "M"
-        return "L"
+    # def get_weight_category(self):
+    #     if self.mtow >= 299200:
+    #         return "H"
+    #     elif self.mtow >= 12500:
+    #         return "M"
+    #     return "L"
 
 
 class FlightAircraft(models.Model):
     _name = 'flight.aircraft'
-    _inherit = 'flight.base'
     _description = 'Aircraft'
 
     _rec_name = 'registration'
@@ -105,6 +103,7 @@ class FlightAircraft(models.Model):
     registration = fields.Char("Aircraft registration")
     sn = fields.Char("Aircraft serial number")
     year = fields.Date("Year of manufacture")
+    mtow = fields.Integer("Maximum take-off weight in pounds")
 
     model_id = fields.Many2one("flight.aircraft.model")
 

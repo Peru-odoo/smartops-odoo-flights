@@ -6,15 +6,15 @@ from odoo import models, fields, api
 
 class FlightAerodrome(models.Model):
     _name = 'flight.aerodrome'
-    _inherit = 'flight.base'
     _description = 'Aerodrome'
+    _rec_name = 'icao'
 
     partner_id = fields.Many2one("res.partner", string="Address")
     country_id = fields.Many2one("res.country", related="partner_id.country_id", store=True)
 
     icao = fields.Char("ICAO identifier", index=True)
     iata = fields.Char("IATA identifier", index=True)
-    elevation = fields.Integer("Aerodrome elevation in feet")
+    elevation = fields.Integer("Aerodrome elevation in feet", null=True)
     aerodrome_type = fields.Selection([
         ("small_airport", "Small Airport"),
         ("medium_airport", "Medium Airport"),

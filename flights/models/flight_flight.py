@@ -5,7 +5,6 @@ from odoo import models, fields, api, _
 
 class FlightFlight(models.Model):
     _name = 'flight.flight'
-    _inherit = 'flight.base'
     _description = 'Flight'
 
     _rec_name = 'flight_number_id'
@@ -98,7 +97,6 @@ class FlightFlight(models.Model):
 
 class FlightFlightParam(models.Model):
     _name = 'flight.flight.param'
-    _inherit = 'flight.base'
     _description = 'Flight Parameter'
 
     flight_id = fields.Many2one('flight.flight')
@@ -117,7 +115,6 @@ class FlightFlightParamType(models.Model):
 
 class FlightNumber(models.Model):
     _name = 'flight.number'
-    _inherit = 'flight.base'
     _description = 'Flight Number'
 
     prefix_id = fields.Many2one('flight.prefix')
@@ -131,7 +128,6 @@ class FlightNumber(models.Model):
 
 class FlightPrefix(models.Model):
     _name = 'flight.prefix'
-    _inherit = 'flight.base'
     _description = 'Flight Number Prefix'
 
     name = fields.Char("Prefix")

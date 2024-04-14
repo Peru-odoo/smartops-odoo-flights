@@ -31,7 +31,6 @@ class FlightPilotTime(models.Model):
     """
 
     _name = 'flight.pilottime'
-    _inherit = 'flight.base'
     _description = 'Pilot Flight Time Statistics'
 
     flight_id = fields.Many2one('flight.flight', 'Flight')

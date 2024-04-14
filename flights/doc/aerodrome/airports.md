@@ -3,7 +3,7 @@
 1. Get csv file here: https://datahub.io/core/airport-codes
 2. Install cli tool:
 
-        pip install csvkit
+        pip install csvkit timezonefinder
 
 3. Check airport types:
 

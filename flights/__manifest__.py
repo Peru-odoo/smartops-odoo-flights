@@ -22,8 +22,7 @@
     # any module necessary for this one to work correctly
     'depends': [
         'base',
-        # FIXME: need installation instruction
-        # 'geoengine_partner'
+        'contacts',
     ],
 
     # always loaded

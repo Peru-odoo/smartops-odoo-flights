@@ -5,7 +5,6 @@ from odoo import fields, models
 
 class FlightPilotActivity(models.Model):
     _name = "flight.pilot.activity"
-    _inherit = "flight.base"
     _description = 'Flight Pilot Activity'
 
     flight_id = fields.Many2one('flight.flight')

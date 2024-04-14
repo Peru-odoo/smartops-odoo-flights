@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 import sys
 import csv
 from timezonefinder import TimezoneFinder
@@ -17,13 +16,12 @@ aerodrome_csv_filename = 'flight.aerodrome.csv'
 tf = TimezoneFinder()
 
 # Open the input CSV file
-with open(csv_file, newline='') as input_csvfile:
+with open(csv_file, newline='', encoding='utf-8') as input_csvfile:
     reader = csv.reader(input_csvfile)
 
     # Open the output CSV files for writing
-    with open(partner_csv_filename, 'w', newline='') as partner_csvfile, \
-            open(aerodrome_csv_filename, 'w', newline='') as aerodrome_csvfile:
-
+    with open(partner_csv_filename, 'w', newline='', encoding='utf-8') as partner_csvfile, \
+            open(aerodrome_csv_filename, 'w', newline='', encoding='utf-8') as aerodrome_csvfile:
         # Create CSV writers for both files
         partner_writer = csv.writer(partner_csvfile, quoting=csv.QUOTE_ALL)
         aerodrome_writer = csv.writer(aerodrome_csvfile, quoting=csv.QUOTE_ALL)
@@ -38,11 +36,11 @@ with open(csv_file, newline='') as input_csvfile:
         # Iterate over each row in the input CSV file
         for row in reader:
             ident, type, name, elevation_ft, continent, iso_country, iso_region, municipality, gps_code, iata_code, local_code, coordinates = row
-
             partner_latitude, partner_longitude = 0, 0
             tz = "UTC"
+
             if coordinates:
-                partner_longitude, partner_latitude = coordinates.split(", ")
+                partner_latitude, partner_longitude = coordinates.split(", ")
                 partner_longitude = float(partner_longitude)
                 partner_latitude = float(partner_latitude)
                 tz = tf.certain_timezone_at(lat=float(partner_latitude), lng=partner_longitude)

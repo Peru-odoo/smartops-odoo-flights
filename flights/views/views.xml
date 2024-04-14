@@ -112,7 +112,7 @@
 
     <!-- Define action for flight.aircraft -->
     <record id="action_flight_aircraft" model="ir.actions.act_window">
-        <field name="name">Aircrafts</field>
+        <field name="name">Aircraft</field>
         <field name="res_model">flight.aircraft</field>
         <field name="view_mode">list,form</field>
     </record>
@@ -137,60 +137,59 @@
                 <!-- Define form fields -->
                 <group>
                     <field name="registration"/>
-                    <field name="flight_source_id"/>
                 </group>
             </form>
         </field>
     </record>
 
-    <menuitem id="menu_flight_aircraft" name="Aircrafts" parent="menu_flights_folder" action="action_flight_aircraft" sequence="20"/>
+    <menuitem id="menu_flight_aircraft" name="Aircraft" parent="menu_flights_folder" action="action_flight_aircraft" sequence="20"/>
 
     
 
-    <!-- Define action for flight.data -->
-    <record id="action_flight_data" model="ir.actions.act_window">
-        <field name="name">Source Data</field>
-        <field name="res_model">flight.data</field>
-        <field name="view_mode">list,form</field>
-    </record>
+<!--    &lt;!&ndash; Define action for flight.data &ndash;&gt;-->
+<!--    <record id="action_flight_data" model="ir.actions.act_window">-->
+<!--        <field name="name">Source Data</field>-->
+<!--        <field name="res_model">flight.data</field>-->
+<!--        <field name="view_mode">list,form</field>-->
+<!--    </record>-->
 
-    <!-- Define tree view for flight.data -->
-    <record id="view_flight_data_tree" model="ir.ui.view">
-        <field name="name">flight.data.tree</field>
-        <field name="model">flight.data</field>
-        <field name="arch" type="xml">
-            <tree>
-                <field name="is_parsed"/>
-                <field name="source_type"/>
-                <field name="source_model"/>
-                <field name="source_ref"/>
-            </tree>
-        </field>
-    </record>
+<!--    &lt;!&ndash; Define tree view for flight.data &ndash;&gt;-->
+<!--    <record id="view_flight_data_tree" model="ir.ui.view">-->
+<!--        <field name="name">flight.data.tree</field>-->
+<!--        <field name="model">flight.data</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree>-->
+<!--                <field name="is_parsed"/>-->
+<!--                <field name="source_type"/>-->
+<!--                <field name="source_model"/>-->
+<!--                <field name="source_ref"/>-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <!-- Define form view for flight.data -->
-    <record id="view_flight_data_form" model="ir.ui.view">
-        <field name="name">flight.data.form</field>
-        <field name="model">flight.data</field>
-        <field name="arch" type="xml">
-            <form>
-                <!-- Define form fields -->
-                <group>
-                    <field name="is_parsed"/>
-                    <field name="source_type"/>
-                    <field name="source_model"/>
-                    <field name="source_ref"/>
-                </group>
-                <notebook>
-                    <page>
-                        <field name="raw_text"/>
-                    </page>
-                </notebook>
-            </form>
-        </field>
-    </record>
+<!--    &lt;!&ndash; Define form view for flight.data &ndash;&gt;-->
+<!--    <record id="view_flight_data_form" model="ir.ui.view">-->
+<!--        <field name="name">flight.data.form</field>-->
+<!--        <field name="model">flight.data</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                &lt;!&ndash; Define form fields &ndash;&gt;-->
+<!--                <group>-->
+<!--                    <field name="is_parsed"/>-->
+<!--                    <field name="source_type"/>-->
+<!--                    <field name="source_model"/>-->
+<!--                    <field name="source_ref"/>-->
+<!--                </group>-->
+<!--                <notebook>-->
+<!--                    <page>-->
+<!--                        <field name="raw_text"/>-->
+<!--                    </page>-->
+<!--                </notebook>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <menuitem id="menu_flight_data" name="Source Data" parent="menu_config_folder" action="action_flight_data" sequence="20"/>
+<!--    <menuitem id="menu_flight_data" name="Source Data" parent="menu_config_folder" action="action_flight_data" sequence="20"/>-->
 
 
     <!-- Define menu item for flight.export.wizard -->
